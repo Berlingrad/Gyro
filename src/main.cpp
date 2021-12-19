@@ -41,7 +41,7 @@ int main() {
     }
     **/
     
-    float degree2radian, degree, radian_angle, placement, radius, timer;
+    float degree2radian, degree, radian_angle, displacement, radius, timer;
     int counter;
     float sum;
     float array[40];
@@ -74,9 +74,9 @@ int main() {
 
         degree2radian = PI / 180;
         degree = sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
-        placement = radius * sin(degree * 0.0174533);
+        displacement = radius * sin(degree * 0.0174533);
         
-        array[counter] = (placement > 0.1) ? placement : 0;
+        array[counter] = (displacement > 0.1) ? displacement : 0;
 
         sum += array[counter];
 
@@ -91,7 +91,7 @@ int main() {
         
         
 
-        printf("Time: %+7.1fs, wx: %+7.2f dps, wy: %+7.2f dps, wz: %+7.2f dps, cumulative distance:%+7.2fm, step length: %+7.2fm\n", timer * 0.5, x, y, z, sum, placement);
+        printf("Time: %+7.1fs, wx: %+7.2f dps, wy: %+7.2f dps, wz: %+7.2f dps, cumulative distance:%+7.2fm, step length: %+7.2fm\n", timer * 0.5, x, y, z, sum, displacement);
      
         ThisThread::sleep_for(500ms);
  
